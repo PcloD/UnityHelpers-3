@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Contracts.IResolver">
+            <summary>
+            Allows to associate a dependency (AKA an interface) to a specific implementation and
+            resolves the necessary dependencies when requested
+            </summary>
+        </member>
+        <member name="M:Contracts.IResolver.Register``2">
+            <summary>
+            Associate the TImplementation type to a TDependency interface. 
+            </summary>
+            <typeparam name="TDependency"> The type of the dependency. </typeparam>
+            <typeparam name="TImplementation"> The type of the implementation. </typeparam>
+        </member>
+        <member name="M:Contracts.IResolver.Register``1(``0)">
+            <summary>
+            Associate an instance to a TDependency. interface. 
+            </summary>
+            <typeparam name="TDependency"> The type of the dependency. </typeparam>
+            <param name="implementation"> The implementation. </param>
+        </member>
+        <member name="M:Contracts.IResolver.Resolve``1">
+            <summary>
+            Resolves the dependency requested returning an instance of a class that implements the
+            specified interface, based on the current configuration.
+            </summary>
+            <typeparam name="TDependency"> The type of the dependency. </typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Contracts.IResolver.Resolve(System.Type)">
+            <summary>
+            Resolves the dependency requested returning an instance of a class that implements the
+            specified interface, based on the current configuration.
+            </summary>
+            <param name="dependencyType"> Type of the dependency. </param>
+            <returns></returns>
+        </member>
+        <member name="T:Contracts.IResolverFactory">
+            <summary>
+            Factory class for the <see cref="T:Contracts.IResolver" /> interface. 
+            </summary>
+        </member>
+        <member name="M:Contracts.IResolverFactory.Build">
+            <summary>
+            Creates a new instance of a class that implements <see cref="T:Contracts.IResolver" />. 
+            </summary>
+        </member>
+    </members>
+</doc>

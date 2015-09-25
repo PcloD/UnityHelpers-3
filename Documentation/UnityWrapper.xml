@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnityWrapper</name>
+    </assembly>
+    <members>
+        <member name="T:UnityWrapper.UnityResolver">
+            <summary>
+            <see cref="T:Contracts.IResolver" /> implementation based on the Microsoft Unity framework 
+            </summary>
+        </member>
+        <member name="M:UnityWrapper.UnityResolver.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnityWrapper.UnityResolver" /> class. 
+            </summary>
+            <param name="unityContainer"> The unity container. </param>
+        </member>
+        <member name="M:UnityWrapper.UnityResolver.Register``2">
+            <summary>
+            Registers this instance. 
+            </summary>
+            <typeparam name="TDependency"> The type of the dependency. </typeparam>
+            <typeparam name="TImplementation"> The type of the implementation. </typeparam>
+        </member>
+        <member name="M:UnityWrapper.UnityResolver.Register``1(``0)">
+            <summary>
+            Registers the specified implementation associating it to the generic type. 
+            </summary>
+            <typeparam name="TDependency"> The type of the dependency. </typeparam>
+            <param name="implementation"> The implementation. </param>
+        </member>
+        <member name="M:UnityWrapper.UnityResolver.Resolve``1">
+            <summary>
+            Resolves this instance. 
+            </summary>
+            <typeparam name="TDependency"> The type of the dependency. </typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:UnityWrapper.UnityResolver.Resolve(System.Type)">
+            <summary>
+            Resolves the specified dependency type. 
+            </summary>
+            <param name="dependencyType"> Type of the dependency. </param>
+            <returns></returns>
+        </member>
+        <member name="T:UnityWrapper.UnityResolverFactory">
+            <summary>
+            Factory class for the <see cref="T:UnityWrapper.UnityResolver" /> 
+            </summary>
+        </member>
+        <member name="M:UnityWrapper.UnityResolverFactory.Build">
+            <summary>
+            Builds this instance. 
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

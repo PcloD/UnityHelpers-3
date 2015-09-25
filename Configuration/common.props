@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CommonImported>True</CommonImported>
+    <RootDir Condition="$(RootDir) == '' Or $(RootDir) == '*Undefined*'">$(SolutionDir)\</RootDir>
+    <ConfigurationDir Condition="$(ConfigurationDir) == '' Or $(ConfigurationDir) == '*Undefined*'">$(RootDir)\Configuration\</ConfigurationDir>
+    <NugetDir>$(RootDir)packages\</NugetDir>
+    <LibDir>$(RootDir)\Output\$(Configuration)\$(PlatformTarget)\</LibDir>
+    <TestProject Condition="$(TestProject) == '' Or $(TestProject) == '*Undefined*'">False</TestProject>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <CodeAnalysisLogFile>$(MSBuildProjectName).CAL.log</CodeAnalysisLogFile>
+    <CodeAnalysisRuleSet>$(ConfigurationDir)\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <DocumentationFile>$(RootDir)Documentation\$(MSBuildProjectName).xml</DocumentationFile>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>$(LibDir)</OutputPath>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+</Project>
